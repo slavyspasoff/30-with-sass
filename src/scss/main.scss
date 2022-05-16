@@ -9,20 +9,108 @@
 // // Option B: Include parts of Bootstrap
 
 // // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-// @import "../node_modules/bootstrap/scss/functions";
+// @import "../../node_modules/bootstrap/scss/functions";
 
 // // 2. Include any default variable overrides here
 
 // // 3. Include remainder of required Bootstrap stylesheets
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../../node_modules/bootstrap/scss/variables";
+// @import "../../node_modules/bootstrap/scss/mixins";
 
 // // 4. Include any optional Bootstrap components as you like
-// @import "../node_modules/bootstrap/scss/root";
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
-// @import "../node_modules/bootstrap/scss/images";
-// @import "../node_modules/bootstrap/scss/containers";
-// @import "../node_modules/bootstrap/scss/grid";
+// @import "../../node_modules/bootstrap/scss/root";
+// @import "../../node_modules/bootstrap/scss/reboot";
+// @import "../../node_modules/bootstrap/scss/type";
+// @import "../../node_modules/bootstrap/scss/images";
+// @import "../../node_modules/bootstrap/scss/containers";
+// @import "../../node_modules/bootstrap/scss/grid";
 
 // // 5. Add additional custom code here
+nav {
+  ul {
+    justify-content: space-around;
+  }
+}
+header {
+  padding-top: 3rem;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-weight: 700;
+  max-width: 200px;
+}
+header + article {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  > div {
+    padding: 1rem;
+  }
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 1rem;
+  aside {
+    padding: 1rem;
+  }
+}
+footer {
+  padding: 1em 2em;
+  ul {
+    list-style: none;
+    padding-left: 0;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and(min-width: 768px ) {
+  h1 {
+    max-width: 100%;
+  }
+  nav {
+    ul {
+      justify-content: flex-end;
+    }
+  }
+  header + article {
+    margin-inline: 3rem;
+    div.card {
+      display: flex;
+      flex-direction: row;
+      .card-img-top {
+        height: 100%;
+        max-width: 25%;
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+  main {
+    flex-wrap: nowrap;
+  }
+}
+@media screen and(min-width: 1024px ) {
+  .cards {
+    justify-content: center !important;
+    gap: 1rem;
+    div.card {
+      flex-basis: calc(50% - 1rem);
+
+      .card-img-top {
+        aspect-ratio: 1.5/1;
+        max-width: 50%;
+      }
+    }
+  }
+  footer {
+    #footer-ul {
+      justify-content: center !important;
+      gap: 2rem;
+    }
+  }
+}
